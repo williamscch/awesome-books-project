@@ -21,15 +21,7 @@
 
 To get a local copy up and running follow the next steps: -Copy the SSH key of the repository and make a 'git clone' in your terminal using the copied key, then you will be able to deploy this project locally.
 
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
+## 👤 Author
 
 - GitHub: [@wdavidcch](https://github.com/wdavidcch)
 - Twitter: [@wdavidcch](https://twitter.com/wdavidcch)
