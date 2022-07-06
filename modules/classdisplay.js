@@ -1,36 +1,34 @@
-import Storage from './classstorage.js';
+import { getBooks } from './classstorage.js';
 import { title, author } from './variables-fullpage.js';
 
-export default class Display {
-    static displayList = () => {
-      const booksArray = Storage.getBooks();
-      booksArray.forEach((book) => Display.addBook(book));
-    }
+export const addBook = (book) => {
+  const list = document.getElementById('list');
+  const bookCard = document.createElement('ul');
+  const title = document.createElement('li');
+  const author = document.createElement('li');
+  const removeButton = document.createElement('button');
+  removeButton.classList.add('delete');
 
-    static addBook = (book) => {
-      const list = document.getElementById('list');
-      const bookCard = document.createElement('ul');
-      const title = document.createElement('li');
-      const author = document.createElement('li');
-      const removeButton = document.createElement('button');
-      removeButton.classList.add('delete');
+  title.innerHTML = book.title;
+  author.textContent = `by ${book.author}`;
+  removeButton.textContent = 'Remove';
 
-      title.innerHTML = book.title;
-      author.textContent = `by ${book.author}`;
-      removeButton.textContent = 'Remove';
+  list.appendChild(bookCard);
+  bookCard.append(title, author, removeButton);
+};
 
-      list.appendChild(bookCard);
-      bookCard.append(title, author, removeButton);
-    }
+export const displayList = () => {
+  const booksArray = getBooks();
+  booksArray.forEach((book) => addBook(book));
+};
 
-    static removeBook = (eTarget) => {
-      if (eTarget.classList.contains('delete')) {
-        eTarget.parentElement.remove();
-      }
-    }
+export const removeBook = (eTarget) => {
+  if (eTarget.classList.contains('delete')) {
+    eTarget.parentElement.remove();
+  }
+};
 
-    static clearInputFields = () => {
-      title.value = '';
-      author.value = '';
-    }
-}
+export const clearInputFields = () => {
+  title.value = '';
+  author.value = '';
+};

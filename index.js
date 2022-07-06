@@ -1,6 +1,14 @@
 import Classbook from './modules/classbook.js';
-import Storage from './modules/classstorage.js';
-import display from './modules/classdisplay.js';
+
+import { addBookStorage, removeBookStorage } from './modules/classstorage.js';
+
+import {
+  addBook,
+  displayList,
+  removeBook,
+  clearInputFields,
+} from './modules/classdisplay.js';
+
 import {
   title,
   author,
@@ -19,18 +27,18 @@ import { DateTime } from './node_modules/luxon/src/luxon.js';
 button.addEventListener('click', (e) => {
   e.preventDefault();
   const book = new Classbook(title.value, author.value);
-  display.addBook(book);
-  Storage.addBookStorage(book);
-  display.clearInputFields();
+  addBook(book);
+  addBookStorage(book);
+  clearInputFields();
 });
 
 document.getElementById('list').addEventListener('click', (e) => {
-  display.removeBook(e.target);
+  removeBook(e.target);
 
-  Storage.removeBookStorage(e.target.parentElement.firstChild.textContent);
+  removeBookStorage(e.target.parentElement.firstChild.textContent);
 });
 
-display.displayList();
+displayList();
 
 // full page events
 
