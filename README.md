@@ -23,7 +23,7 @@ To get a local copy up and running follow the next steps: -Copy the SSH key of t
 
 ## 👤 Author
 
-- GitHub: [@wdavidcch](https://github.com/wdavidcch)
+- GitHub: [@williamscch](https://github.com/williamscch)
 - Twitter: [@wdavidcch](https://twitter.com/wdavidcch)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/williams-colmenares-989a6b151)
 
